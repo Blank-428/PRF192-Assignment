@@ -1,3 +1,14 @@
+void CleanFile(char* FileName) {
+	fclose(fopen(FileName,"w"));
+}
+
+void PrintResultToFile(char* FileName, char LicensePlate[][31], char VehicleType[][31], char EntryTime[][31], int vt) {
+	CleanFile(FileName);
+	FILE* f=fopen(FileName,"a");
+	fprintf(f, "%s %s %s\n",LicensePlate[vt],VehicleType[vt],EntryTime[vt]);
+	fclose(f);
+}
+
 void ReadFromFile(char* FileName, char LicensePlate[][31], char VehicleType[][31], char EntryTime[][31], int* n) {
 	FILE* f=fopen(FileName,"r");
 	while ((fscanf(f,"%s%s%s",LicensePlate[*n],VehicleType[*n],EntryTime[*n]))!=EOF) {

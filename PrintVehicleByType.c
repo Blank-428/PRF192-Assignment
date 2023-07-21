@@ -2,9 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-void CleanFile(char* FileName) {
-	fclose(fopen(FileName,"w"));
-}
+void CleanFile(char* FileName);
 
 void PrintVehicleByType(char LicensePlate[][31], char VehicleType[][31], char EntryTime[][31], int n)
 {

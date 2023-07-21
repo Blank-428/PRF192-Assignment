@@ -2,6 +2,9 @@
 #include <string.h>
 #include <stdlib.h>
 
+void CleanFile(char* FileName);
+void PrintResultToFile(char* FileName, char LicensePlate[][31], char VehicleType[][31], char EntryTime[][31], int vt);
+
 int Search(char license[31], char LicensePlate[][31], int n)
 {
 	for (int i = 0; i < n; i++)
@@ -11,13 +14,6 @@ int Search(char license[31], char LicensePlate[][31], int n)
 		}
 	}
 	return -1;
-}
-
-void PrintResultToFile(char* FileName, char LicensePlate[][31], char VehicleType[][31], char EntryTime[][31], int vt) {
-	fclose(fopen(FileName, "w"));
-	FILE* f=fopen(FileName,"a");
-	fprintf(f, "%s %s %s\n",LicensePlate[vt],VehicleType[vt],EntryTime[vt]);
-	fclose(f);
 }
 
 void SearchVehicle(char LicensePlate[][31], char VehicleType[][31], char EntryTime[][31], int n)

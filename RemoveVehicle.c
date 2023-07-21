@@ -3,6 +3,8 @@
 #include <stdlib.h>
 
 int Search(char license[31], char LicensePlate[][31], int n);
+void CleanFile(char* FileName);
+void PrintResultToFile(char* FileName, char LicensePlate[][31], char VehicleType[][31], char EntryTime[][31], int vt);
 
 void RemoveVehicle(char LicensePlate[][31], char VehicleType[][31], char EntryTime[][31], int* n)
 {
